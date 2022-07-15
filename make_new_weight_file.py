@@ -4,11 +4,10 @@
 
 import numpy as np
 from struct import pack
+from gitignore.user_data import path
 
-path = 'C:\\Users\\s_andycho1120\\Desktop\\training_nums_identifier\\gitignore\\un_trained_values\\'
 
-
-def make_new_weight_file(level, fan_out, fan_in):
+def make_new_weight_file(level, fan_in, fan_out):
     title = 'w' + str(level) + '.idx2-ubtye'
 
     file_name = path + title
@@ -21,7 +20,7 @@ def make_new_weight_file(level, fan_out, fan_in):
         # size of dimension 1 (4bytes)
         # size of dimension 2 (4bytes)
         if fp:
-            arr = [0x000d02, fan_out, fan_in]
+            arr = [0x000d02, fan_in, fan_out]
             val = pack('>iii', *arr)
             fp.write(val)
             print('idx3 foramt -  complete')
@@ -69,10 +68,10 @@ def make_new_bias_file(level, length):
 
 
 if __name__ == '__main__':
-    # make_new_weight_file(1, 16, 784)
+    # make_new_weight_file(1, 784, 16)
     # make_new_weight_file(2, 16, 16)
-    # make_new_weight_file(3, 10, 16)
+    # make_new_weight_file(3, 16, 10)
     # make_new_bias_file(1, 16)
     # make_new_bias_file(2, 16)
-    # make_new_bias_file(3, 16)
+    # make_new_bias_file(3, 10)
     pass

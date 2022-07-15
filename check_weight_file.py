@@ -1,6 +1,7 @@
 # checking weight file
 # check list: type of data, number of dimensions, size of dimention 1, size of dimention 2, *
 from struct import unpack
+from gitignore.user_data import path
 
 data_type_dict = {0x8: 'unsigned byte',
                   0x9: 'sugbed byte',
@@ -18,8 +19,6 @@ def check_weight_file(level):
     return_val = list()
 
     title = 'w' + str(level) + '.idx2-ubtye'
-    path = 'C:\\Users\\s_andycho1120\\Desktop\\training_nums_identifier\\gitignore\\un_trained_values\\'
-
     file_name = path + title
     fp = open(file_name, 'rb')
 
