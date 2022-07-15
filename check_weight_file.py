@@ -17,7 +17,7 @@ def byte_to_int(val):
 def check_weight_file(level):
     return_val = list()
 
-    title = 'w' + str(level) + '.idx3-ubtye'
+    title = 'w' + str(level) + '.idx2-ubtye'
     path = 'C:\\Users\\s_andycho1120\\Desktop\\training_nums_identifier\\gitignore\\un_trained_values\\'
 
     file_name = path + title
@@ -48,4 +48,6 @@ def check_weight_file(level):
 
 
 if __name__ == "__main__":
+    check_weight_file(1)
+    check_weight_file(2)
     check_weight_file(3)
